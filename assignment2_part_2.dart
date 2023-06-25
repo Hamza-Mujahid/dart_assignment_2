@@ -1,5 +1,3 @@
-import 'dart:async';
-
 void main() {
 //   Q.1: Create a list of names and print all names using list.
   List names = <String>[
@@ -148,7 +146,7 @@ void main() {
   print(largestNumber2);
 
 // Q.10: Write a Dart code that takes in a list of strings and removes any duplicate elements, returning a new list without duplicates. The order of elements in the new list should be the same as in the original list.
-  List randomNumbers3 = <int>[
+  List<num> randomNumbers3 = [
     5,
     7,
     5,
@@ -157,7 +155,7 @@ void main() {
     6,
     2,
   ];
-  List<dynamic> filteredRandomNumbers3 = randomNumbers3.toSet().toList();
+  List<num> filteredRandomNumbers3 = randomNumbers3.toSet().toList();
   //  .toSet() Creates a [Set] containing the same elements as this iterable.
 
   print('\n Question 10 \n 👇');
@@ -180,23 +178,120 @@ void main() {
 
 // Q.13: Implement a code that takes in a list of integers and returns a new list containing only the unique elements from the original list. The order of elements in the new list should be the same as in the original list.
 
+  List<num> someNumbers = [
+    5,
+    7,
+    5,
+    2,
+    6,
+    2,
+  ];
+  List<num> unique = [];
+  someNumbers.forEach((e) => {
+        if (someNumbers.indexOf(e) == someNumbers.lastIndexOf(e))
+          {unique.add(e)}
+      });
+  print('\n Question 13 \n 👇');
+  print(unique);
+
 // Q.14: Write a Dart code that takes in a list of integers and prints a new list with the elements sorted in ascending order. The original list should remain unchanged.
+
+  List<int> unSortedNumbers = [4, 91, 919, 1, 3, 8, 1, 6, 1, 51, 3];
+
+  List<int> sortedListNumbers = unSortedNumbers;
+  sortedListNumbers.sort();
+  print('\n Question 14 \n 👇');
+  print(sortedListNumbers);
 
 // Q.15: Implement a Dart code that uses the where() method to filter out negative numbers from a list of integers. The program should take in the original list as a parameter and print a new list containing only the positive numbers.
 
+  List<num> somePosNegNumbers = [4, 91, 919, 1, -3, 8, -1, 6, 1, 51, 3];
+
+  List<num> negativeList = somePosNegNumbers.where((n) => n < 0).toList();
+  print('\n Question 15 \n 👇');
+  print(negativeList);
+
 // Q.16: Implement a Dart code that uses the where() method to filter out odd numbers from a list of integers. The program should take in the original list as a parameter and print a new list containing only the even numbers.
+
+  List<num> someEvenOdds = [4, 91, 919, 1, -3, 8, -1, 6, 1, 51, 3];
+  List<num> evenList = someEvenOdds.where((n) => n % 2 == 0).toList();
+  print('\n Question 15 \n 👇');
+  print(evenList);
 
 // Q.17: Given a list of integers, write a Dart code that uses the map() method to create a new list with each value squared. The program should take in the original list as a parameter and print the new list.
 
+  List<num> damnNumbers = [4, 1, 3, 8, -1, 6, 51, 3];
+
+  List<num> squaredNumbers = damnNumbers.map((e) => e * e).toList();
+  print('\n Question 16 \n 👇');
+  print(squaredNumbers);
+
 // Q.18: Create a map named "person" with the following key-value pairs: "name" as "John", "age" as 25, "isStudent" as true. Write a Dart code to check if the person is both a student and over 18 years old. Print "Eligible" if both conditions are true, otherwise print "Not eligible".
+
+  Map<String, dynamic> person = {"name": "John", "age": 25, "isStudent": true};
+
+  print('\n Question 18 \n 👇');
+  if (person["age"] < 18 && person["isStudent"]) {
+    print("Eligible");
+  } else {
+    print("Not Eligible");
+  }
 
 // Q.19: Given a map representing a product with keys "name", "price", and "quantity", write Dart code to check if the product is in stock. If the quantity is greater than 0, print "In stock", otherwise print "Out of stock".
 
+  Map<String, dynamic> product = {"name": "John", "price": 25, "quantity": 01};
+
+  print('\n Question 19 \n 👇');
+  if (product["quantity"] > 0) {
+    print("In Stock");
+  } else {
+    print("Out of Stock");
+  }
+
 // Q.20: Create a map named "car" with the following key-value pairs: "brand" as "Toyota", "color" as "Red", "isSedan" as true. Write Dart code to check if the car is a sedan and red in color. Print "Match" if both conditions are true, otherwise print "No match".
+
+  Map<String, dynamic> car = {
+    "brand": "Toyota",
+    "color": "orange",
+    "isSedan": true
+  };
+
+  print('\n Question 20 \n 👇');
+  if (car["isSedan"] && car["color"] == "red") {
+    print("match");
+  } else {
+    print("No match");
+  }
 
 // Q.21: Given a map representing a user with keys "name", "isAdmin", and "isActive", write Dart code to check if the user is an active admin. If the user is both an admin and active, print "Active admin", otherwise print "Not an active admin".
 
+  Map<String, dynamic> user = {
+    "name": "Hamza",
+    "isAdmin": true,
+    "isActive": true
+  };
+
+  print('\n Question 21 \n 👇');
+  if (user["isAdmin"] && user["isActive"]) {
+    print("Active admin");
+  } else {
+    print("Not an active admin");
+  }
+
 // Q.22: Given a map representing a shopping cart with keys as product names and values as quantities, write Dart code to check if a product named "Apple" exists in the cart. Print "Product found" if it exists, otherwise print "Product not found".
 
+  Map<String, dynamic> cart = {
+    "Peanut Butter": "500 gm",
+    "Jow ka Dalia": "aik dabba",
+    "Khajoor": "aik dabba",
+    "zaitoon ka tel": "50 gm",
+    "kele": 12
+  };
 
+  print('\n Question 22 \n 👇');
+  if (cart.containsKey("apple")) {
+    print("Product Found");
+  } else {
+    print("Product Not Found");
+  }
 }
